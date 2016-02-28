@@ -1,0 +1,30 @@
+_repo: The-Man-Who-Kept-His-Money-in-a-Box_3767
+creator:
+  author:
+    agent_name: Trollope, Anthony
+    birthdate: 1815
+    deathdate: 1882
+    gutenberg_agent_id: '324'
+    url: http://www.gutenberg.org/2009/agents/324
+    wikipedia: http://en.wikipedia.org/wiki/Anthony_Trollope
+description: As I was not myself possessed of anything of that sort, and had no intention
+  of going to any foreign court, I could not argue the matter with her. But I assisted
+  her in getting together an enormous pile of luggage, among which there were seven
+  large boxes covered with canvas, such as ladies not uncommonly carry with them when
+  travelling. That one which she represented as being smaller than the others, and
+  as holding jewellery, might be about a yard long by a foot and a half deep.
+gutenberg_issued: '2003-02-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '3767'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Short stories'
+- !lcsh 'Travelers -- Fiction'
+- !lcc 'PR'
+- !lcsh 'British -- Europe -- Fiction'
+title: The Man Who Kept His Money in a Box
+url: http://www.gutenberg.org/ebooks/3767
