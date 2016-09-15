@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: 2Lt6Q/SZyUIAHVJWbf/kdFf1QSvxfLSgIM9hmelPqa73Gwlhm7IX1UvM0Y5Efx8PlQoyojS1cthM+zBxNc7HQl+6ZKrPwLVmc9ZA8EhxgtbvsMJDQoH5qu5wSumPQgP2Rel/lG4qM+Ad3Swkn3wkPBxfT7lx6IAkJqWF4DdldCHg8lBKcksDM8QBujIwFamvg9XlFmmMTrtGnBYD3CKfBRWDm2s/KZ5AAff//S8+mxtFtGQvp48nUd/5e7s8FGP+uQ0at4sZf4vWuNdS2WyQ7QDFWW6FbXSRCtKTp5GKvUDaGOA6Am3GKNsyb06jnasS1CXFCXu2nxApwHzNdkDASJg0O5ty6EiyOJZUsFKCyUNw1DPEqWgokFLxK4djwoHC1hlRfi7W3lEoGVZ9nYKzj0wjH3Oy5S73GaIxDzVxK1WNtGu4BFqwjH6nHhu/RB0JxUs9CaEr00eWlY19RyHBldSxs9aarVJggP+KyQ9mvi36NPgWk2QSv2l717r8pF9W+XYGyfS6TQE+dhI4yqKrbdUHBu1JliYbgT8FdR46zZE5VJwIzxwEpetK6qRnJ2lFEzyD3cYadseWDExkrXyZaNq5n4uIFRw6nQhlbQPPfNW81eW2VHio8f8YgFlfPRPwRWmIvT9asVKDsmWoq1xHcUM1g8WuDuHUsjgRuI0tEv4=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/The-Man-Who-Kept-His-Money-in-a-Box_3767
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
