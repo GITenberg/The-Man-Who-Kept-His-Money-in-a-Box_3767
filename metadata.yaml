@@ -1,5 +1,8 @@
 _repo: The-Man-Who-Kept-His-Money-in-a-Box_3767
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Trollope, Anthony
@@ -14,6 +17,8 @@ description: As I was not myself possessed of anything of that sort, and had no 
   large boxes covered with canvas, such as ladies not uncommonly carry with them when
   travelling. That one which she represented as being smaller than the others, and
   as holding jewellery, might be about a yard long by a foot and a half deep.
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/3767#The-Man-Who-Kept-His-Money-in-a-Box
 gutenberg_issued: '2003-02-01'
 gutenberg_type: Text
 identifiers:
