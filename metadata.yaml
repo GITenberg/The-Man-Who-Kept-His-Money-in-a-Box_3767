@@ -1,5 +1,5 @@
 _repo: The-Man-Who-Kept-His-Money-in-a-Box_3767
-_version: 0.2.0
+_version: 0.2.1
 covers:
 - cover_type: generated
   image_path: cover.png
@@ -32,5 +32,6 @@ subjects:
 - !lcsh 'Travelers -- Fiction'
 - !lcc 'PR'
 - !lcsh 'British -- Europe -- Fiction'
+- GITenberg
 title: The Man Who Kept His Money in a Box
 url: http://www.gutenberg.org/ebooks/3767
